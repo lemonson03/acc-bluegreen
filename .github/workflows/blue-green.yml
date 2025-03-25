@@ -67,7 +67,7 @@ jobs:
 
             # 최신 docker-compose 파일로 실행
             cd ~/app  # EC2에 app이 clone 되어 있다고 가정
-            docker-compose -f $COMPOSE_FILE up -d --force-recreate
+            docker compose -f $COMPOSE_FILE up -d --force-recreate
 
             # health check (간단한 버전)
             sleep 5
