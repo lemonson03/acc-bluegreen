@@ -48,7 +48,7 @@ jobs:
 
             # 로그인
             aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin ${{ steps.login-ecr.outputs.registry }}
-            echo ${aws ecr get-login-password --region ${{ env.AWS_REGION }}}
+            
             # 현재 활성 버전 확인 (blue or green)
             CURRENT_VERSION=$(docker ps --format '{{.Names}}' | grep fastapi- | grep -o 'blue\|green' || echo "none")
 
